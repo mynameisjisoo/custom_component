@@ -3,21 +3,24 @@ import styles from './modal.module.css';
 
 const Modal = props => {
   const modalRef = useRef();
+  const madalWrapperRef = useRef();
   const openModal = () => {
-    modalRef.current.style.display = 'flex';
+    modalRef.current.style.display = 'block';
+    madalWrapperRef.current.style.display = 'block';
   };
 
   const closeModal = () => {
     modalRef.current.style.display = 'none';
+    madalWrapperRef.current.style.display = 'none';
   };
 
   return (
     <section className={styles.section}>
       <header className={styles.subject}>Modal</header>
-      <div className={styles.background}>
-        <button className={styles.openButton} onClick={openModal}>
-          Open Modal
-        </button>
+      <button className={styles.openButton} onClick={openModal}>
+        Open Modal
+      </button>
+      <div ref={madalWrapperRef} className={styles.modalWrapper}>
         <div ref={modalRef} className={styles.modal}>
           <button className={styles.closeButton} onClick={closeModal}>
             x
