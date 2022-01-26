@@ -1,0 +1,61 @@
+/*button 공용*/
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.section {
+  margin: 3rem 0;
+  background-color: tan;
+  width: 100%;
+  min-height: 20rem;
+  padding: 1rem;
+}
+
+.subject {
+  text-align: left;
+}
+
+.background {
+  background-color: turquoise;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.openButton {
+  position: relative;
+  /* left: 50%;
+  top: 50%;
+  transition: translate(-50%, -50%); */
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  background-color: #512ca8;
+  color: white;
+}
+
+.modal {
+  display: none;
+  display: flexbox;
+  flex-direction: column;
+  /* position: relative;
+  left: 50%;
+  top: 50%;
+  transition: translate(-50%, -50%); */
+
+  color: #512ca8;
+  background-color: white;
+  width: 20rem;
+  border-radius: 1rem;
+  padding: 0.2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.closeButton {
+  background-color: transparent;
+  font-weight: bold;
+}
+
+p {
+  padding-top: 1.5rem;
+}
