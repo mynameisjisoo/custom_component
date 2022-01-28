@@ -16,7 +16,7 @@ const Modal = props => {
 
   return (
     <section className={styles.section}>
-      <header className={styles.subject}>Modal</header>
+      <h3 className={styles.subject}>Modal</h3>
       <button className={styles.openButton} onClick={openModal}>
         Open Modal
       </button>

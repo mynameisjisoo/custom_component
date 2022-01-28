@@ -9,7 +9,7 @@ button {
   margin: 3rem 0;
   width: 50rem;
   height: 20rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 1px #ccc solid;
   border-radius: 0.5rem;
   position: relative;
@@ -17,6 +17,7 @@ button {
 
 .subject {
   text-align: left;
+  margin: 0;
 }
 
 .openButton {
