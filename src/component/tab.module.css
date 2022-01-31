@@ -26,7 +26,8 @@ button {
   display: flex;
   list-style: none;
   justify-content: space-around;
-  background-color: azure;
+  background-color: #ccc;
+  color: grey;
   width: 100%;
   height: fit-content;
 }
@@ -36,8 +37,6 @@ button {
   padding-left: 0.5rem;
   width: 100%;
   cursor: pointer;
-
-  border: 1px solid salmon;
 }
 
 .description {
@@ -47,6 +46,8 @@ button {
   height: 10rem;
 }
 
-.selected {
-  background-color: blue;
+.tab[isselected='true'] {
+  background-color: #512ca8;
+  color: white;
+  transition: all 250ms ease-in;
 }
