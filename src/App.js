@@ -9,9 +9,9 @@ import Toggle from './component/toggle';
 function App() {
   return (
     <div className={styles.App}>
-      {/* <Toggle /> */}
+      <Toggle />
       {/* <Modal /> */}
-      <Tab />
+      {/* <Tab /> */}
       {/* <Tag /> */}
       {/* <AutoComplete /> */}
       {/* <ClickToEdit /> */}
