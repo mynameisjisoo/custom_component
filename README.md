@@ -8,6 +8,7 @@
 2. [Modal](#modaljs)
 3. [Tab](#tabjs)
 4. [Tag](#tagjs)
+5. [ClickToEdit](#clicktoeditjs)
    <br>
    <br>
 
@@ -105,5 +106,25 @@
 
 - 단어를 입력 후 엔터를 누르면 태그가 생성됨
 - 각 태그의 x 아이콘을 누르면 태그가 삭제됨
-  <br><br><br>
-  [👆맨 위로 가기](#custom-component)
+  <br><br>
+
+## ClickToEdit.js
+
+#### 구현방법
+
+- 전체 요소를 포함하고 있는 section 태그에 onClick 속성을 이용하여 클릭이벤트가 일어나면 updateItems 콜백함수가 실행됨
+- updateItems 함수는 ref를 이용하여 input의 value를 각각 name과 age state에 추가함
+- state가 업데이트 될 때마다 이름과 나이가 화면에 보여짐 됨
+
+#### 어려웠던 점
+
+- 없음
+
+#### 실행방법
+
+<img src="https://user-images.githubusercontent.com/84840032/152804576-2db56237-d68b-43f1-a175-4f92e3ece46f.gif">
+
+- 이름 또는 나이를 입력한 후 컴포넌트의 여백을 클릭하면 하단에 입력한 이름과 나이가 각각 업데이트 됨.
+
+<br><br><br>
+[👆맨 위로 가기](#custom-component)

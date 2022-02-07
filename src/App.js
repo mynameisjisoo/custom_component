@@ -1,5 +1,5 @@
 import styles from './App.module.css';
-import AutoComplete from './component/autocomplete';
+import Autocomplete from './component/autocomplete';
 import ClickToEdit from './component/clickToEdit';
 import Modal from './component/modal';
 import Tab from './component/tab';
@@ -9,12 +9,12 @@ import Toggle from './component/toggle';
 function App() {
   return (
     <div className={styles.App}>
-      {/* <Toggle />
+      <Toggle />
       <Modal />
-      <Tab /> */}
+      <Tab />
       <Tag />
-      {/* <AutoComplete />
-      <ClickToEdit /> */}
+      <Autocomplete />
+      <ClickToEdit />
     </div>
   );
 }

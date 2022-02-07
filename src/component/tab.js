@@ -13,6 +13,10 @@ const Tab = props => {
     { tabNo: 'THREE', menu: 'Tab3', ref: threeRef }
   ];
 
+  useEffect(() => {
+    tabs[selectedTab].ref.current.setAttribute('isselected', 'true');
+  }, []);
+
   const onTabClicked = index => {
     setSelectedTab(index);
     tabs.map(tab => {

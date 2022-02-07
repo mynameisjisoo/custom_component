@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useRef } from 'react/cjs/react.development';
+import React, { useRef, useState } from 'react';
 import styles from './clickToEdit.module.css';
 
 const ClickToEdit = props => {

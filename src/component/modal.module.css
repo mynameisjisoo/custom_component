@@ -20,12 +20,11 @@ button {
   margin: 0;
 }
 
-.openButton {
+.openModal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   padding: 1rem 2rem;
   border-radius: 1.5rem;
   background-color: #512ca8;
@@ -56,7 +55,7 @@ button {
   padding: 0.2rem 1.5rem 1.5rem 1.5rem;
 }
 
-.closeButton {
+.closeModal {
   background-color: transparent;
   font-weight: bold;
 }
