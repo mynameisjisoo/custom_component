@@ -42,9 +42,7 @@
 
 - .openButton을 클릭하면 openModal 콜백함수가 실행됨
   openModal 콜백함수에서는 .modal과 .modalWrapper 의 display 속성을 'block'으로 변경함
-
 - .modal의 .closeModal 버튼을 클릭하면 .modal과 .modalWrapper 의 display 속성을 'none'으로 변경하여 화면에 렌더링되지 않음
-
 - .modalWrapper의 z-index를 1로 설정하여 .openButton 보다 상위의 레이어를 차지하여 .openModal 버튼은 가려짐
 - .modalWrapper 의 position을 absolute, top, left를 0, width,height를 100%로 하여 전체 섹션을 차지하게 함
 
@@ -58,6 +56,7 @@
 
 - "Open Modal" 이라고 써있는 버튼을 클릭하면 "HELLO CODESTATES"라고 써있는 모달창이 나타남
 - 모달창의 x 아이콘을 클릭하면 모달창이 닫히며 초기화면으로 돌아감
+
   <br><br>
 
 ## Tab.js
@@ -82,6 +81,7 @@
   <img src="https://user-images.githubusercontent.com/84840032/152754669-3039ebb2-907e-4dc8-9b0a-f28bab1f97cf.gif">
 
 - 총 세가지의 탭으로 구성되어 있고, 클릭한 탭의 배경색이 변경되며 하단에 클릭한 탭의 번호가 표시됨
+
   <br><br>
 
 ## Tag.js
@@ -106,4 +106,4 @@
 - 단어를 입력 후 엔터를 누르면 태그가 생성됨
 - 각 태그의 x 아이콘을 누르면 태그가 삭제됨
   <br><br><br>
-  [맨 위로 가기](#custom-component)
+  [👆맨 위로 가기](#custom-component)
