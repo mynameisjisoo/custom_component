@@ -4,13 +4,12 @@ import React, { useRef, useState } from 'react';
 import styles from './autocomplete.module.css';
 
 const Autocomplete = props => {
-  const furniture = [
-    'abcdef',
+  const wordList = [
     'antique',
     '중고A급',
+    'bed',
     'bronze',
     'cabinet',
-    'chair',
     'carpet',
     'desk',
     'diningroom',
@@ -43,43 +42,43 @@ const Autocomplete = props => {
   ];
   const wrapperRef = useRef();
   const inputRef = useRef();
-  const [wordList, setWordList] = useState([]);
+  const [suggestionList, setSuggestionList] = useState([]);
 
   const compareWords = () => {
     const query = inputRef.current.value.toLowerCase();
     if (query == '' || query == ' ') {
-      setWordList([]);
+      setSuggestionList([]);
       wrapperRef.current.setAttribute('isactive', 'false');
     } else {
-      const recommendList = furniture
+      const relatedList = wordList
         .filter(word => word.toLowerCase().includes(query))
         .map((word, index) => {
           const element = [];
-          const indexOfquery = word.toLowerCase().search(query);
-          return (element[index] = { word: word, indexOfquery: indexOfquery });
+          const indexOfQuery = word.toLowerCase().search(query);
+          return (element[index] = { word: word, indexOfQuery: indexOfQuery });
         });
-      sortByRelated(recommendList, query);
+      sortByRelated(relatedList, query);
       wrapperRef.current.setAttribute('isactive', 'true');
     }
   };
 
-  const sortByRelated = recommendList => {
-    recommendList.sort(function (a, b) {
-      if (a.indexOfquery > b.indexOfquery) {
+  const sortByRelated = relatedList => {
+    relatedList.sort(function (a, b) {
+      if (a.indexOfQuery > b.indexOfQuery) {
         return 1;
       }
-      if (a.indexOfquery < b.indexOfquery) {
+      if (a.indexOfQuery < b.indexOfQuery) {
         return -1;
       }
       return 0;
     });
-    setWordList(recommendList);
+    setSuggestionList(relatedList);
   };
 
   const deleteInput = () => {
     inputRef.current.value = '';
     wrapperRef.current.setAttribute('isactive', 'false');
-    setWordList([]);
+    setSuggestionList([]);
   };
 
   return (
@@ -94,7 +93,7 @@ const Autocomplete = props => {
             onKeyUp={compareWords}
           />
           <ul className={styles.suggestionList}>
-            {wordList.map(element => (
+            {suggestionList.map(element => (
               <li key={element.word} className={styles.suggestion}>
                 {element.word}
               </li>

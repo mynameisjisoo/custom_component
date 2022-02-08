@@ -2,13 +2,16 @@
 
 > Postcss를 이용하여 css styling 하였고 구현에 필요한 icon은 fontawesome 라이브러리를 이용함
 
+<br>
+
 ## 목차
 
 1. [Toggle](#togglejs)
 2. [Modal](#modaljs)
 3. [Tab](#tabjs)
 4. [Tag](#tagjs)
-5. [ClickToEdit](#clicktoeditjs)
+5. [AutoComplete](#autocompletejs)
+6. [ClickToEdit](#clicktoeditjs)
    <br>
    <br>
 
@@ -65,7 +68,7 @@
 #### 구현방법
 
 - tab의 속성들 (탭에 표시될 내용, 탭이 클릭될 때 하단에 표시될 내용, ref객체)을 담은 tabs라는 배열을 선언함
-- tabs 배열을 map으로 순회하면서 li태그인 .tab을 생성함
+- tabs 배열을 map으로 순회하면서 <li\>태그인 .tab을 생성함
 - .tab을 클릭하면 클릭한 tab의 index를 인자로 전달하는 onTabClicked 콜백함수를 실행함
 - onTabClicked 함수에서는 전달받은 index를 state로 관리하고, tabs 배열에서 각 인자의 index와 parameter로 전달받은 index를 비교하여 일치하는 tab의 'isselected'속성을 true로 설정함
 
@@ -106,6 +109,32 @@
 
 - 단어를 입력 후 엔터를 누르면 태그가 생성됨
 - 각 태그의 x 아이콘을 누르면 태그가 삭제됨
+  <br><br>
+
+## AutoComplete.js
+
+#### 구현방법
+
+- input에 onKeyUp 이벤트를 이용하여 사용자가 키를 눌렀다 뗄 때마다 compareWords 콜백함수가 실행되게 함
+- compareWords 콜백함수에서는 input의 내용(value)이 공백이 아니라면, wordList 중 사용자가 입력한 query가 포함된 단어로만 이루어진 배열울 만들고(filter), 단어에서 query가 몇번째자리에 위치하는지를 포함하는 배열을 생성함(map)
+- 이렇게 만들어진 배열을 sortByRelated라는 콜백함수로 전달하여 query와 관련된 순서대로 (indexOfQuery를 이용) 정렬한 후 sugggestionList state에 저장함
+- suggestionList가 업데이트 될 때마다 동적으로 <li\>를 생성해서 단어를 보여줌
+  <ul\>과 <li\> 대신 <datalist\>와 <option\>태그를 이용하여 목록을 보여주려 했지만 가이드라인에서 보여지는 것과 다르고 css 스타일링이 어려워 <ul\>과 <li\> 태그를 사용함
+
+#### 어려웠던 점
+
+- autoComplete 할 단어 데이터를 어디에서 가져올지 고민 되었음. API와 통신하여 받아왔으면 더 나은 퀄리티로 만들 수 있었을 것 같지만 API를 사용해도 된다는 가이드라인이 없었으므로 wordList라는 배열에 단어를 직접 저장함
+- 사용자가 입력한 query와 관련있는 순서대로 정렬하는게 어려웠음. 예를들어 사용자가 b를입력하면 bed가 먼저보여야 하지만 above가 먼저 보이는 등 wordList 배열에 입력한 순서대로 보여짐  
+  query와 관련된 순으로 정렬하기위해서 search()를 이용하여 각 단어에서 query가 몇번째 자리에 위치하는지를 파악하고 배열로 저장함. 저장한 배열을 sort()로 정렬하여 해결함
+- 추천 검색어가 있으면 dropdown 목록으로 보여지고 추천 검색어가 없으면 그냥 input 처럼 보이게 하는 것이 어려웠음  
+  suggestionList에 데이터가 있으면 input과 ul을 감싸고 있는 wrapper div에 'isactive' 속성을 true로 설정함. css에서는 [isactive='true'] 일때 .input과 .suggestionList 의 스타일링을 추가하여 추천 검색어가 있으면 드롭다운목록으로 보여지게 함
+
+#### 실행방법
+
+<img src ="https://user-images.githubusercontent.com/84840032/152904834-ddeda531-79a4-4e6e-ab66-ab3a9a8ecd0d.gif">
+
+- 검색창에 알파벳을 입력하면 비슷한 단어의 목록을 드롭다운으로 보여줌
+- x 아이콘을 클릭하면 입력한 내용이 지워짐
   <br><br>
 
 ## ClickToEdit.js
