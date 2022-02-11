@@ -7,7 +7,7 @@ button {
 
 .section {
   margin: 3rem 0;
-  width: 50rem;
+  width: 50%;
   height: 20rem;
   border: 1px #ccc solid;
   border-radius: 0.5rem;
@@ -50,4 +50,11 @@ button {
   background-color: #512ca8;
   color: white;
   transition: all 250ms ease-in;
+}
+
+/* For small screen */
+@media screen and (max-width: 780px) {
+  .section {
+    width: 80%;
+  }
 }

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useRef } from 'react/cjs/react.development';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './tab.module.css';
 
 const Tab = props => {

@@ -1,6 +1,6 @@
 .section {
   margin: 3rem 0;
-  width: 50rem;
+  width: 50%;
   height: 20rem;
   padding: 0.5rem;
   border: 1px #ccc solid;
@@ -64,4 +64,12 @@
   width: 5rem;
   height: 1rem;
   cursor: pointer;
+}
+
+/* For small screen */
+
+@media screen and (max-width: 780px) {
+  .section {
+    width: 80%;
+  }
 }
